@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alerts View</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Aptos", "Avenir Next", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(249, 115, 22, 0.12), transparent 18%),
+          linear-gradient(180deg, #081018 0%, #111827 100%);
+        color: #f8fafc;
+      }
+      .frame {
+        width: 1600px;
+        height: 900px;
+        padding: 42px;
+        box-sizing: border-box;
+      }
+      .card {
+        height: 100%;
+        padding: 32px;
+        border-radius: 32px;
+        background: rgba(11, 19, 32, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.16);
+      }
+      .eyebrow {
+        color: #fb923c;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 13px;
+      }
+      h1 {
+        margin: 8px 0 18px;
+        font-family: Georgia, serif;
+        font-size: 52px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 22px;
+      }
+      .item {
+        padding: 22px;
+        border-radius: 22px;
+        background: rgba(17, 24, 39, 0.92);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      .topline {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+      }
+      .topline span {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(249, 115, 22, 0.12);
+        color: #fdba74;
+      }
+      p, small {
+        color: #d1d5db;
+        line-height: 1.7;
+      }
+      .rule {
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(30, 41, 59, 0.72);
+        margin-bottom: 14px;
+      }
+      .rule strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="card">
+        <div class="eyebrow">Rules and alerts</div>
+        <h1>Good orchestration software tells operators exactly which policy and queue conditions deserve action now.</h1>
+        <div class="grid">
+          <div class="item">
+            <div class="rule">
+              <strong>Enterprise legal escalation</strong>
+              Deal risk + legal review &gt; 24h → Legal lead → Exec sponsor
+            </div>
+            <div class="rule">
+              <strong>Partner SLA recovery</strong>
+              Partner intake idle &gt; 6h → Channel ops → Routing manager
+            </div>
+            <div class="rule">
+              <strong>Identity exception triage</strong>
+              Critical queue count &gt; 5 → IAM lead → Security governance
+            </div>
+          </div>
+          <div class="item">
+            <div class="topline">
+              <strong>Approval lane is absorbing too much commercial escalation</strong>
+              <span>High</span>
+            </div>
+            <p>Cross-functional approvers are creating a bottleneck for strategic pricing and identity exceptions.</p>
+            <small>Auto-split approval paths by workflow family this sprint.</small>
+            <hr style="border-color:rgba(148,163,184,0.14);margin:18px 0" />
+            <div class="topline">
+              <strong>Retry rate is concentrated in partner and billing handoffs</strong>
+              <span>Medium</span>
+            </div>
+            <p>Most orchestration noise comes from two route families rather than broad system instability.</p>
+            <small>Introduce path-specific remediation playbooks.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

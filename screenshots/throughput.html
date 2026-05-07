@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Throughput View</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Aptos", "Avenir Next", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(45, 212, 191, 0.16), transparent 26%),
+          linear-gradient(180deg, #081018 0%, #111827 100%);
+        color: #f8fafc;
+      }
+      .frame {
+        width: 1600px;
+        height: 900px;
+        padding: 42px;
+        box-sizing: border-box;
+      }
+      .card {
+        height: 100%;
+        padding: 32px;
+        border-radius: 32px;
+        background: rgba(11, 19, 32, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.16);
+      }
+      .eyebrow {
+        color: #5eead4;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 13px;
+      }
+      h1 {
+        margin: 8px 0 14px;
+        font-family: Georgia, serif;
+        font-size: 52px;
+      }
+      p {
+        color: #d1d5db;
+        max-width: 760px;
+        line-height: 1.7;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
+        margin-top: 24px;
+      }
+      .panel {
+        border-radius: 24px;
+        background: rgba(17, 24, 39, 0.92);
+        border: 1px solid rgba(148, 163, 184, 0.14);
+        padding: 22px;
+      }
+      .chart {
+        position: relative;
+        height: 360px;
+        margin-top: 10px;
+      }
+      .gridline {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: rgba(148, 163, 184, 0.12);
+      }
+      .bars {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 22px;
+        position: absolute;
+        inset: 40px 30px 30px 30px;
+      }
+      .bar-group {
+        position: relative;
+        height: 100%;
+      }
+      .bar {
+        position: absolute;
+        bottom: 28px;
+        width: 26px;
+        border-radius: 14px 14px 0 0;
+      }
+      .g1 { left: 6px; }
+      .g2 { left: 42px; }
+      .g3 { left: 78px; }
+      .b1 { background: #2dd4bf; }
+      .b2 { background: #38bdf8; }
+      .b3 { background: #f59e0b; }
+      .label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 12px;
+        color: #94a3b8;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .lane {
+        padding: 16px;
+        border-radius: 18px;
+        background: rgba(30, 41, 59, 0.72);
+        margin-bottom: 14px;
+      }
+      .lane strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+      .track {
+        height: 12px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(51, 65, 85, 0.9);
+        margin: 10px 0;
+      }
+      .fill { height: 100%; border-radius: inherit; }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="card">
+        <div class="eyebrow">Execution throughput</div>
+        <h1>Operators need to see where work moves, where it stalls, and where retries accumulate.</h1>
+        <p>
+          The studio turns daily workflow movement into a visible surface so execution volume, approvals, and noise can be
+          discussed together rather than split between dashboards and tickets.
+        </p>
+        <div class="grid">
+          <div class="panel">
+            <div class="chart">
+              <div class="gridline" style="top: 18%"></div>
+              <div class="gridline" style="top: 38%"></div>
+              <div class="gridline" style="top: 58%"></div>
+              <div class="gridline" style="top: 78%"></div>
+              <div class="bars">
+                <div class="bar-group">
+                  <div class="bar b1 g1" style="height: 62%"></div>
+                  <div class="bar b2 g2" style="height: 42%"></div>
+                  <div class="bar b3 g3" style="height: 18%"></div>
+                  <div class="label">Mon</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar b1 g1" style="height: 74%"></div>
+                  <div class="bar b2 g2" style="height: 56%"></div>
+                  <div class="bar b3 g3" style="height: 14%"></div>
+                  <div class="label">Tue</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar b1 g1" style="height: 69%"></div>
+                  <div class="bar b2 g2" style="height: 50%"></div>
+                  <div class="bar b3 g3" style="height: 19%"></div>
+                  <div class="label">Wed</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar b1 g1" style="height: 82%"></div>
+                  <div class="bar b2 g2" style="height: 64%"></div>
+                  <div class="bar b3 g3" style="height: 16%"></div>
+                  <div class="label">Thu</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar b1 g1" style="height: 88%"></div>
+                  <div class="bar b2 g2" style="height: 72%"></div>
+                  <div class="bar b3 g3" style="height: 10%"></div>
+                  <div class="label">Fri</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="lane">
+              <strong>Intake · 38 active</strong>
+              <div class="track"><div class="fill" style="width:76%;background:#2dd4bf"></div></div>
+              <small>&lt; 2h · Ops intake</small>
+            </div>
+            <div class="lane">
+              <strong>Review · 26 active</strong>
+              <div class="track"><div class="fill" style="width:52%;background:#38bdf8"></div></div>
+              <small>&lt; 8h · Functional lead</small>
+            </div>
+            <div class="lane">
+              <strong>Approval · 14 active</strong>
+              <div class="track"><div class="fill" style="width:28%;background:#f59e0b"></div></div>
+              <small>&lt; 12h · Director</small>
+            </div>
+            <div class="lane">
+              <strong>Execution · 31 active</strong>
+              <div class="track"><div class="fill" style="width:62%;background:#a78bfa"></div></div>
+              <small>&lt; 24h · Delivery pod</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
